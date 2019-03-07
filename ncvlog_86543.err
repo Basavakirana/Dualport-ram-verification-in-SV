@@ -1,0 +1,489 @@
+csi-ncvlog - CSI: Command line:
+ncvlog
+    -f /home/vv2trainee25/Desktop/basavakiran/systemverilog/dualport_ram/env_lib/INCA_libs/irun.lnx8664.15.20.nc/ncvlog.args
+        -XLMODE ./INCA_libs/irun.lnx8664.15.20.nc
+        -RUNMODE
+        dualport_ram.v
+        ram_if.sv
+        ram_trans.sv
+        ram_gen.sv
+        ram_write_drv.sv
+        ram_read_drv.sv
+        ram_write_mon.sv
+        ram_read_mon.sv
+        ram_rm.sv
+        ram_sb.sv
+        ram_env.sv
+        -CDSLIB ./INCA_libs/irun.lnx8664.15.20.nc/cdsrun.lib
+        -HDLVAR ./INCA_libs/irun.lnx8664.15.20.nc/hdlrun.var
+        -MESSAGES
+        -UPDATE
+        -XLLIBSTORE ./INCA_libs/irun.lnx8664.15.20.nc/xllibs
+        -ALLOWUNBOUND
+    -CHECK_VERSION TOOL:	irun(64)	15.20-s051
+    -LOG_FD 4
+
+csi-ncvlog - CSI: *F,INTERR: INTERNAL EXCEPTION
+-----------------------------------------------------------------
+The tool has encountered an unexpected condition and must exit.
+Contact Cadence Design Systems customer support about this
+problem and provide enough information to help us reproduce it,
+including the logfile that contains this error message.
+  TOOL:	ncvlog(64)	15.20-s051
+  HOSTNAME: compute-srv2.eda.atme.in
+  OPERATING SYSTEM: Linux 3.10.0-1160.49.1.el7.x86_64 #1 SMP Tue Nov 30 15:51:32 UTC 2021 x86_64
+  MESSAGE: vst_identifier () - bad class, class 843
+-----------------------------------------------------------------
+
+csi-ncvlog - CSI: Cadence Support Investigation, recording details
+Verilog Syntax Tree: root (VST_ROOT) in compilation_unit worklib.\$unit_0x0a2a6b1c :compilation_unit (VST)
+	File: ram_trans.sv, line 1, position 8
+	Decompile: $unit_0x0a2a6b1c
+	Source  : class ram_trans;
+	Position:         ^
+Verilog Syntax Tree: compilation unit declaration (VST_D_COMP_UNIT) in compilation_unit worklib.\$unit_0x0a2a6b1c :compilation_unit (VST)
+	File: ram_trans.sv, line 1, position 8
+	Scope: $unit_0x0a2a6b1c
+	Decompile: $unit_0x0a2a6b1c
+	Source  : class ram_trans;
+	Position:         ^
+Verilog Syntax Tree: root (VST_ROOT) in compilation_unit worklib.\$unit_0x0a2a6b1c :compilation_unit (VST)
+	File: ram_trans.sv, line 1, position 8
+	Decompile: $unit_0x0a2a6b1c
+	Source  : class ram_trans;
+	Position:         ^
+Verilog Syntax Tree: virtual interface type (VST_T_VIRTUAL_IFC) in compilation_unit worklib.\$unit_0x0a2a6b1c :compilation_unit (VST)
+	Scope: $unit_0x0a2a6b1c::ram_env::new
+	Decompile: virtual interface ram_if
+Verilog Syntax Tree: task declaration (VST_D_TASK) in compilation_unit worklib.\$unit_0x0a2a6b1c :compilation_unit (VST)
+	File: ram_env.sv, line 23, position 15
+	Scope: $unit_0x0a2a6b1c::ram_env::new
+	Decompile: new
+	Source  :     function new(virtual ram_if.RD_DRV rd_drv_if,
+	Position:                ^
+Verilog Syntax Tree: instance declaration (VST_D_INSTANCE) in compilation_unit worklib.\$unit_0x0a2a6b1c :compilation_unit (VST)
+	File: ram_env.sv, line 26, position 30
+	Scope: $unit_0x0a2a6b1c::ram_env::new
+	Decompile: virtual_interface_declaration_15
+	Source  :                  virtual ram_if.WR_MON wr_mon_if);
+	Position:                               ^
+Verilog Syntax Tree: task declaration (VST_D_TASK) in compilation_unit worklib.\$unit_0x0a2a6b1c :compilation_unit (VST)
+	File: ram_env.sv, line 23, position 15
+	Scope: $unit_0x0a2a6b1c::ram_env::new
+	Decompile: new
+	Source  :     function new(virtual ram_if.RD_DRV rd_drv_if,
+	Position:                ^
+Verilog Syntax Tree: blocking assignment statement (VST_S_BLOCKING_ASSIGNMENT) in compilation_unit worklib.\$unit_0x0a2a6b1c :compilation_unit (VST)
+	File: ram_env.sv, line 58, position 37
+	Scope: $unit_0x0a2a6b1c::ram_env::reset_dut.<stmt label>
+	Decompile: (i + 1)
+	Source  :                 for(int i=0;i<4096;i++)
+	Position:                                      ^
+Verilog Syntax Tree: task declaration (VST_D_TASK) in compilation_unit worklib.\$unit_0x0a2a6b1c :compilation_unit (VST)
+	File: ram_env.sv, line 50, position 25
+	Scope: $unit_0x0a2a6b1c::ram_env::reset_dut
+	Decompile: reset_dut
+	Source  :     virtual task reset_dut();
+	Position:                          ^
+Verilog Syntax Tree: statement label declaration (VST_D_STMT_LABEL) in compilation_unit worklib.\$unit_0x0a2a6b1c :compilation_unit (VST)
+	File: ram_env.sv, line 58, position 4094
+	Scope: $unit_0x0a2a6b1c::ram_env::reset_dut.<stmt label>
+	Decompile: unable to decompile type 541
+	Source  :                 for(int i=0;i<4096;i++)
+Verilog Syntax Tree: identifier expression (VST_E_IDENTIFIER) in compilation_unit worklib.\$unit_0x0a2a6b1c :compilation_unit (VST)
+	File: ram_env.sv, line 61, position 55
+	Scope: $unit_0x0a2a6b1c::ram_env::reset_dut.<stmt label>
+	Decompile: i
+	Source  :                         wr_drv_if.wr_drv_cb.wr_addr <= i;
+	Position:                                                        ^
+Verilog Syntax Tree: null statement (VST_S_NULL) in compilation_unit worklib.\$unit_0x0a2a6b1c :compilation_unit (VST)
+	File: ram_env.sv, line 63, position 46
+	Scope: $unit_0x0a2a6b1c::ram_env::reset_dut.<stmt label>
+	Decompile: null statement
+	Source  :                         @(wr_drv_if.wr_drv_cb);
+	Position:                                               ^
+Verilog Syntax Tree: statement label declaration (VST_D_STMT_LABEL) in compilation_unit worklib.\$unit_0x0a2a6b1c :compilation_unit (VST)
+	File: ram_env.sv, line 58, position 4094
+	Scope: $unit_0x0a2a6b1c::ram_env::reset_dut.<stmt label>
+	Decompile: unable to decompile type 541
+	Source  :                 for(int i=0;i<4096;i++)
+Verilog Syntax Tree: root (VST_ROOT) in compilation_unit worklib.\$unit_0x0a2a6b1c :compilation_unit (VST)
+	File: ram_trans.sv, line 1, position 8
+	Decompile: $unit_0x0a2a6b1c
+	Source  : class ram_trans;
+	Position:         ^
+Verilog Syntax Tree: compilation unit declaration (VST_D_COMP_UNIT) in compilation_unit worklib.\$unit_0x0a2a6b1c :compilation_unit (VST)
+	File: ram_trans.sv, line 1, position 8
+	Scope: $unit_0x0a2a6b1c
+	Decompile: $unit_0x0a2a6b1c
+	Source  : class ram_trans;
+	Position:         ^
+Verilog Syntax Tree: root (VST_ROOT) in compilation_unit worklib.\$unit_0x0a2a6b1c :compilation_unit (VST)
+	File: ram_trans.sv, line 1, position 8
+	Decompile: $unit_0x0a2a6b1c
+	Source  : class ram_trans;
+	Position:         ^
+Verilog Syntax Tree: identifier expression (VST_E_IDENTIFIER) in compilation_unit worklib.\$unit_0x0a2a6b1c :compilation_unit (VST)
+	File: ram_env.sv, line 39, position 35
+	Scope: $unit_0x0a2a6b1c::ram_env
+	Decompile: rdmon2rm
+	Source  :         rd_h = new(wrmon2rm,rdmon2rm,rm2sb);
+	Position:                                    ^
+Verilog Syntax Tree: class declaration (VST_D_CLASS) in compilation_unit worklib.\$unit_0x0a2a6b1c :compilation_unit (VST)
+	File: ram_env.sv, line 1, position 12
+	Scope: $unit_0x0a2a6b1c::ram_env
+	Decompile: $unit_0x0a2a6b1c::ram_env
+	Source  : class ram_env;
+	Position:             ^
+Verilog Syntax Tree: compilation unit declaration (VST_D_COMP_UNIT) in compilation_unit worklib.\$unit_0x0a2a6b1c :compilation_unit (VST)
+	File: ram_trans.sv, line 1, position 8
+	Scope: $unit_0x0a2a6b1c
+	Decompile: $unit_0x0a2a6b1c
+	Source  : class ram_trans;
+	Position:         ^
+Verilog Syntax Tree: class declaration (VST_D_CLASS) in compilation_unit worklib.\$unit_0x0a2a6b1c :compilation_unit (VST)
+	File: ram_env.sv, line 1, position 12
+	Scope: $unit_0x0a2a6b1c::ram_env
+	Decompile: $unit_0x0a2a6b1c::ram_env
+	Source  : class ram_env;
+	Position:             ^
+Verilog Syntax Tree: root (VST_ROOT) in compilation_unit worklib.\$unit_0x0a2a6b1c :compilation_unit (VST)
+	File: ram_trans.sv, line 1, position 8
+	Decompile: $unit_0x0a2a6b1c
+	Source  : class ram_trans;
+	Position:         ^
+Verilog Syntax Tree: task declaration (VST_D_TASK) in compilation_unit worklib.\$unit_0x0a2a6b1c :compilation_unit (VST)
+	File: ram_env.sv, line 33, position 21
+	Scope: $unit_0x0a2a6b1c::ram_env::build
+	Decompile: build
+	Source  :     virtual task build();
+	Position:                      ^
+Verilog Syntax Tree: class declaration (VST_D_CLASS) in compilation_unit worklib.\$unit_0x0a2a6b1c :compilation_unit (VST)
+	File: ram_env.sv, line 1, position 12
+	Scope: $unit_0x0a2a6b1c::ram_env
+	Decompile: $unit_0x0a2a6b1c::ram_env
+	Source  : class ram_env;
+	Position:             ^
+Verilog Syntax Tree: blocking assignment statement (VST_S_BLOCKING_ASSIGNMENT) in compilation_unit worklib.\$unit_0x0a2a6b1c :compilation_unit (VST)
+	File: ram_env.sv, line 39, position 13
+	Scope: $unit_0x0a2a6b1c::ram_env::build
+	Decompile: new ()
+	Source  :         rd_h = new(wrmon2rm,rdmon2rm,rm2sb);
+	Position:              ^
+Verilog Syntax Tree: task declaration (VST_D_TASK) in compilation_unit worklib.\$unit_0x0a2a6b1c :compilation_unit (VST)
+	File: ram_env.sv, line 33, position 21
+	Scope: $unit_0x0a2a6b1c::ram_env::build
+	Decompile: build
+	Source  :     virtual task build();
+	Position:                      ^
+Verilog Syntax Tree: sequential block statement (VST_S_SEQ_BLOCK) in compilation_unit worklib.\$unit_0x0a2a6b1c :compilation_unit (VST)
+	File: ram_env.sv, line 34, position 12
+	Scope: $unit_0x0a2a6b1c::ram_env::build
+	Source  :         gen_h = new(gen2wrdrv,gen2rddrv);
+	Position:             ^
+Verilog Syntax Tree: new expression (VST_E_NEW) in compilation_unit worklib.\$unit_0x0a2a6b1c :compilation_unit (VST)
+	File: ram_env.sv, line 38, position 21
+	Scope: $unit_0x0a2a6b1c::ram_env::build
+	Decompile: new ()
+	Source  :         rd_mon_h = new(rd_mon_if,rdmon2rm,rdmon2sb);
+	Position:                      ^
+Verilog Syntax Tree: string type (VST_T_STRING) in compilation_unit worklib.\$unit_0x0a2a6b1c :compilation_unit (VST)
+	Scope: $unit_0x0a2a6b1c::ram_sb::check
+	Decompile: string
+Verilog Syntax Tree: explicit event statement (VST_S_EXPLICIT_EVENT) in compilation_unit worklib.\$unit_0x0a2a6b1c :compilation_unit (VST)
+	File: ram_sb.sv, line 124, position 21
+	Scope: $unit_0x0a2a6b1c::ram_sb::check
+	Decompile: unable to decompile type 648
+	Source  :                     ->done;
+	Position:                      ^
+Verilog Syntax Tree: task declaration (VST_D_TASK) in compilation_unit worklib.\$unit_0x0a2a6b1c :compilation_unit (VST)
+	File: ram_env.sv, line 33, position 21
+	Scope: $unit_0x0a2a6b1c::ram_env::build
+	Decompile: build
+	Source  :     virtual task build();
+	Position:                      ^
+Verilog Syntax Tree: new expression (VST_E_NEW) in compilation_unit worklib.\$unit_0x0a2a6b1c :compilation_unit (VST)
+	File: ram_env.sv, line 39, position 17
+	Scope: $unit_0x0a2a6b1c::ram_env::build
+	Decompile: new ()
+	Source  :         rd_h = new(wrmon2rm,rdmon2rm,rm2sb);
+	Position:                  ^
+Verilog Syntax Tree: task declaration (VST_D_TASK) in compilation_unit worklib.\$unit_0x0a2a6b1c :compilation_unit (VST)
+	File: ram_env.sv, line 33, position 21
+	Scope: $unit_0x0a2a6b1c::ram_env::build
+	Decompile: build
+	Source  :     virtual task build();
+	Position:                      ^
+Verilog Syntax Tree: blocking assignment statement (VST_S_BLOCKING_ASSIGNMENT) in compilation_unit worklib.\$unit_0x0a2a6b1c :compilation_unit (VST)
+	File: ram_env.sv, line 39, position 13
+	Scope: $unit_0x0a2a6b1c::ram_env::build
+	Decompile: new ()
+	Source  :         rd_h = new(wrmon2rm,rdmon2rm,rm2sb);
+	Position:              ^
+Verilog Syntax Tree: new expression (VST_E_NEW) in compilation_unit worklib.\$unit_0x0a2a6b1c :compilation_unit (VST)
+	File: ram_env.sv, line 38, position 21
+	Scope: $unit_0x0a2a6b1c::ram_env::build
+	Decompile: new ()
+	Source  :         rd_mon_h = new(rd_mon_if,rdmon2rm,rdmon2sb);
+	Position:                      ^
+Verilog Syntax Tree: task declaration (VST_D_TASK) in compilation_unit worklib.\$unit_0x0a2a6b1c :compilation_unit (VST)
+	File: ram_read_mon.sv, line 12, position 15
+	Scope: $unit_0x0a2a6b1c::ram_read_mon::new
+	Decompile: new
+	Source  :     function new(virtual ram_if.RD_MON rd_mon_if,
+	Position:                ^
+Verilog Syntax Tree: task declaration (VST_D_TASK) in compilation_unit worklib.\$unit_0x0a2a6b1c :compilation_unit (VST)
+	File: ram_env.sv, line 33, position 21
+	Scope: $unit_0x0a2a6b1c::ram_env::build
+	Decompile: build
+	Source  :     virtual task build();
+	Position:                      ^
+Verilog Syntax Tree: task declaration (VST_D_TASK) in compilation_unit worklib.\$unit_0x0a2a6b1c :compilation_unit (VST)
+	File: ram_read_mon.sv, line 12, position 15
+	Scope: $unit_0x0a2a6b1c::ram_read_mon::new
+	Decompile: new
+	Source  :     function new(virtual ram_if.RD_MON rd_mon_if,
+	Position:                ^
+Verilog Syntax Tree: class declaration (VST_D_CLASS) in compilation_unit worklib.\$unit_0x0a2a6b1c :compilation_unit (VST)
+	File: ram_read_mon.sv, line 1, position 17
+	Scope: $unit_0x0a2a6b1c::ram_read_mon
+	Decompile: $unit_0x0a2a6b1c::ram_read_mon
+	Source  : class ram_read_mon;
+	Position:                  ^
+Verilog Syntax Tree: register declaration (VST_D_REG) in compilation_unit worklib.\$unit_0x0a2a6b1c :compilation_unit (VST)
+	File: ram_read_mon.sv, line 14, position 45
+	Scope: $unit_0x0a2a6b1c::ram_read_mon::new
+	Decompile: unable to decompile type 834 rdmon2sb
+	Source  :                  mailbox #(ram_trans) rdmon2sb);
+	Position:                                              ^
+Verilog Syntax Tree: task declaration (VST_D_TASK) in compilation_unit worklib.\$unit_0x0a2a6b1c :compilation_unit (VST)
+	File: ram_env.sv, line 33, position 21
+	Scope: $unit_0x0a2a6b1c::ram_env::build
+	Decompile: build
+	Source  :     virtual task build();
+	Position:                      ^
+Verilog Syntax Tree: datatype of (VST_T_DATATYPE_OF) in compilation_unit worklib.\$unit_0x0a2a6b1c :compilation_unit (VST)
+	File: ram_env.sv, line 38, position 15
+	Decompile: unable to decompile type 859
+	Source  :         rd_mon_h = new(rd_mon_if,rdmon2rm,rdmon2sb);
+	Position:                ^
+Verilog Syntax Tree: task declaration (VST_D_TASK) in compilation_unit worklib.\$unit_0x0a2a6b1c :compilation_unit (VST)
+	File: ram_env.sv, line 33, position 21
+	Scope: $unit_0x0a2a6b1c::ram_env::build
+	Decompile: build
+	Source  :     virtual task build();
+	Position:                      ^
+Intermediate File: string (IF_STRING) in compilation_unit worklib.\$unit_0x0a2a6b1c :compilation_unit (VST)
+	Decompile: rd_h
+Verilog Syntax Tree: class declaration (VST_D_CLASS) in compilation_unit worklib.\$unit_0x0a2a6b1c :compilation_unit (VST)
+	File: ram_env.sv, line 1, position 12
+	Scope: $unit_0x0a2a6b1c::ram_env
+	Decompile: $unit_0x0a2a6b1c::ram_env
+	Source  : class ram_env;
+	Position:             ^
+Verilog Syntax Tree: task declaration (VST_D_TASK) in compilation_unit worklib.\$unit_0x0a2a6b1c :compilation_unit (VST)
+	File: ram_env.sv, line 33, position 21
+	Scope: $unit_0x0a2a6b1c::ram_env::build
+	Decompile: build
+	Source  :     virtual task build();
+	Position:                      ^
+Verilog Syntax Tree: compilation unit declaration (VST_D_COMP_UNIT) in compilation_unit worklib.\$unit_0x0a2a6b1c :compilation_unit (VST)
+	File: ram_trans.sv, line 1, position 8
+	Scope: $unit_0x0a2a6b1c
+	Decompile: $unit_0x0a2a6b1c
+	Source  : class ram_trans;
+	Position:         ^
+Verilog Syntax Tree: class declaration (VST_D_CLASS) in compilation_unit worklib.\$unit_0x0a2a6b1c :compilation_unit (VST)
+	File: ram_env.sv, line 1, position 12
+	Scope: $unit_0x0a2a6b1c::ram_env
+	Decompile: $unit_0x0a2a6b1c::ram_env
+	Source  : class ram_env;
+	Position:             ^
+Verilog Syntax Tree: register declaration (VST_D_REG) in compilation_unit worklib.\$unit_0x0a2a6b1c :compilation_unit (VST)
+	File: ram_env.sv, line 19, position 27
+	Scope: $unit_0x0a2a6b1c::ram_env
+	Decompile: $unit_0x0a2a6b1c::ram_read_mon rd_mon_h
+	Source  :     ram_read_mon    rd_mon_h;
+	Position:                            ^
+Verilog Syntax Tree: identifier expression (VST_E_IDENTIFIER) in compilation_unit worklib.\$unit_0x0a2a6b1c :compilation_unit (VST)
+	File: ram_env.sv, line 38, position 49
+	Scope: $unit_0x0a2a6b1c::ram_env
+	Decompile: rdmon2sb
+	Source  :         rd_mon_h = new(rd_mon_if,rdmon2rm,rdmon2sb);
+	Position:                                                  ^
+Verilog Syntax Tree: compilation unit declaration (VST_D_COMP_UNIT) in compilation_unit worklib.\$unit_0x0a2a6b1c :compilation_unit (VST)
+	File: ram_trans.sv, line 1, position 8
+	Scope: $unit_0x0a2a6b1c
+	Decompile: $unit_0x0a2a6b1c
+	Source  : class ram_trans;
+	Position:         ^
+Verilog Syntax Tree: class type (VST_T_CLASS) in compilation_unit worklib.\$unit_0x0a2a6b1c :compilation_unit (VST)
+	File: ram_env.sv, line 19, position 15
+	Scope: $unit_0x0a2a6b1c::ram_env
+	Decompile: $unit_0x0a2a6b1c::ram_read_mon
+	Source  :     ram_read_mon    rd_mon_h;
+	Position:                ^
+Verilog Syntax Tree: class type (VST_T_CLASS) in compilation_unit worklib.\$unit_0x0a2a6b1c :compilation_unit (VST)
+	File: ram_sb.sv, line 105, position 31
+	Scope: $unit_0x0a2a6b1c::ram_sb::check
+	Decompile: $unit_0x0a2a6b1c::ram_trans
+	Source  :     virtual task check(ram_trans rcvd_data);
+	Position:                                ^
+Verilog Syntax Tree: register declaration (VST_D_REG) in compilation_unit worklib.\$unit_0x0a2a6b1c :compilation_unit (VST)
+	File: ram_sb.sv, line 105, position 41
+	Scope: $unit_0x0a2a6b1c::ram_sb::check
+	Decompile: $unit_0x0a2a6b1c::ram_trans rcvd_data
+	Source  :     virtual task check(ram_trans rcvd_data);
+	Position:                                          ^
+Verilog Syntax Tree: task declaration (VST_D_TASK) in compilation_unit worklib.\$unit_0x0a2a6b1c :compilation_unit (VST)
+	File: ram_sb.sv, line 105, position 21
+	Scope: $unit_0x0a2a6b1c::ram_sb::check
+	Decompile: check
+	Source  :     virtual task check(ram_trans rcvd_data);
+	Position:                      ^
+Verilog Syntax Tree: class type (VST_T_CLASS) in compilation_unit worklib.\$unit_0x0a2a6b1c :compilation_unit (VST)
+	File: ram_sb.sv, line 105, position 31
+	Scope: $unit_0x0a2a6b1c::ram_sb::check
+	Decompile: $unit_0x0a2a6b1c::ram_trans
+	Source  :     virtual task check(ram_trans rcvd_data);
+	Position:                                ^
+Verilog Syntax Tree: identifier expression (VST_E_IDENTIFIER) in compilation_unit worklib.\$unit_0x0a2a6b1c :compilation_unit (VST)
+	File: ram_sb.sv, line 122, position 66
+	Scope: $unit_0x0a2a6b1c::ram_sb::check
+	Decompile: rcvd_data
+	Source  :             if(data_verified >= (number_of_transactions - rcvd_data.no_of_write_trans))
+	Position:                                                                   ^
+Verilog Syntax Tree: task declaration (VST_D_TASK) in compilation_unit worklib.\$unit_0x0a2a6b1c :compilation_unit (VST)
+	File: ram_sb.sv, line 105, position 21
+	Scope: $unit_0x0a2a6b1c::ram_sb::check
+	Decompile: check
+	Source  :     virtual task check(ram_trans rcvd_data);
+	Position:                      ^
+Intermediate File: string (IF_STRING) in compilation_unit worklib.\$unit_0x0a2a6b1c :compilation_unit (VST)
+	Decompile: no_of_write_trans
+Verilog Syntax Tree: class select expression (VST_E_CLASS_SELECT) in compilation_unit worklib.\$unit_0x0a2a6b1c :compilation_unit (VST)
+	File: ram_sb.sv, line 122, position 84
+	Scope: $unit_0x0a2a6b1c::ram_trans
+	Decompile: rcvd_data.no_of_write_trans
+	Source  :             if(data_verified >= (number_of_transactions - rcvd_data.no_of_write_trans))
+	Position:                                                                                     ^
+Verilog Syntax Tree: referral into class (VST_R_INTO_CLASS) in compilation_unit worklib.\$unit_0x0a2a6b1c :compilation_unit (VST)
+	Scope: $unit_0x0a2a6b1c::ram_trans
+	Decompile: $unit_0x0a2a6b1c::ram_trans
+Verilog Syntax Tree: identifier expression (VST_E_IDENTIFIER) in compilation_unit worklib.\$unit_0x0a2a6b1c :compilation_unit (VST)
+	File: ram_sb.sv, line 111, position 26
+	Scope: $unit_0x0a2a6b1c::ram_sb
+	Decompile: rm_data
+	Source  :                 if(!rm_data.compare(rcvd_data,diff))
+	Position:                           ^
+Verilog Syntax Tree: class type (VST_T_CLASS) in compilation_unit worklib.\$unit_0x0a2a6b1c :compilation_unit (VST)
+	File: ram_sb.sv, line 105, position 31
+	Scope: $unit_0x0a2a6b1c::ram_sb::check
+	Decompile: $unit_0x0a2a6b1c::ram_trans
+	Source  :     virtual task check(ram_trans rcvd_data);
+	Position:                                ^
+Verilog Syntax Tree: class type (VST_T_CLASS) in compilation_unit worklib.\$unit_0x0a2a6b1c :compilation_unit (VST)
+	File: ram_sb.sv, line 105, position 31
+	Scope: $unit_0x0a2a6b1c::ram_sb::check
+	Decompile: $unit_0x0a2a6b1c::ram_trans
+	Source  :     virtual task check(ram_trans rcvd_data);
+	Position:                                ^
+Verilog Syntax Tree: register declaration (VST_D_REG) in compilation_unit worklib.\$unit_0x0a2a6b1c :compilation_unit (VST)
+	File: ram_trans.sv, line 12, position 31
+	Scope: $unit_0x0a2a6b1c::ram_trans
+	Decompile: int no_of_write_trans
+	Source  :     static int no_of_write_trans;
+	Position:                                ^
+Verilog Syntax Tree: register declaration (VST_D_REG) in compilation_unit worklib.\$unit_0x0a2a6b1c :compilation_unit (VST)
+	File: ram_sb.sv, line 105, position 41
+	Scope: $unit_0x0a2a6b1c::ram_sb::check
+	Decompile: $unit_0x0a2a6b1c::ram_trans rcvd_data
+	Source  :     virtual task check(ram_trans rcvd_data);
+	Position:                                          ^
+Verilog Syntax Tree: identifier expression (VST_E_IDENTIFIER) in compilation_unit worklib.\$unit_0x0a2a6b1c :compilation_unit (VST)
+	File: ram_sb.sv, line 111, position 49
+	Scope: $unit_0x0a2a6b1c::ram_sb::check
+	Decompile: diff
+	Source  :                 if(!rm_data.compare(rcvd_data,diff))
+	Position:                                                  ^
+Verilog Syntax Tree: register declaration (VST_D_REG) in compilation_unit worklib.\$unit_0x0a2a6b1c :compilation_unit (VST)
+	File: ram_sb.sv, line 106, position 18
+	Scope: $unit_0x0a2a6b1c::ram_sb::check
+	Decompile: string diff
+	Source  :         string diff;
+	Position:                   ^
+Verilog Syntax Tree: identifier expression (VST_E_IDENTIFIER) in compilation_unit worklib.\$unit_0x0a2a6b1c :compilation_unit (VST)
+	File: ram_sb.sv, line 111, position 49
+	Scope: $unit_0x0a2a6b1c::ram_sb::check
+	Decompile: diff
+	Source  :                 if(!rm_data.compare(rcvd_data,diff))
+	Position:                                                  ^
+Verilog Syntax Tree: task declaration (VST_D_TASK) in compilation_unit worklib.\$unit_0x0a2a6b1c :compilation_unit (VST)
+	File: ram_sb.sv, line 105, position 21
+	Scope: $unit_0x0a2a6b1c::ram_sb::check
+	Decompile: check
+	Source  :     virtual task check(ram_trans rcvd_data);
+	Position:                      ^
+Verilog Syntax Tree: identifier expression (VST_E_IDENTIFIER) in compilation_unit worklib.\$unit_0x0a2a6b1c :compilation_unit (VST)
+	File: ram_sb.sv, line 111, position 49
+	Scope: $unit_0x0a2a6b1c::ram_sb::check
+	Decompile: diff
+	Source  :                 if(!rm_data.compare(rcvd_data,diff))
+	Position:                                                  ^
+Verilog Syntax Tree: identifier expression (VST_E_IDENTIFIER) in compilation_unit worklib.\$unit_0x0a2a6b1c :compilation_unit (VST)
+	File: ram_env.sv, line 67, position 36
+	Decompile: wr_drv_if
+	Source  :                 @(wr_drv_if.wr_drv_cb);
+	Position:                                     ^
+Verilog Syntax Tree: identifier expression (VST_E_IDENTIFIER) in compilation_unit worklib.\$unit_0x0a2a6b1c :compilation_unit (VST)
+	File: ram_env.sv, line 65, position 40
+	Decompile: wr_drv_if
+	Source  :                 wr_drv_if.wr_drv_cb.write <= '0;
+	Position:                                         ^
+Intermediate File: data block (IF_BLK) in compilation_unit worklib.\$unit_0x0a2a6b1c :compilation_unit (VST)
+Verilog Syntax Tree: identifier expression (VST_E_IDENTIFIER) in compilation_unit worklib.\$unit_0x0a2a6b1c :compilation_unit (VST)
+	File: ram_env.sv, line 63, position 44
+	Decompile: wr_drv_if
+	Source  :                         @(wr_drv_if.wr_drv_cb);
+	Position:                                             ^
+Verilog Syntax Tree: method task enable statement (VST_S_METHOD_TASK_ENABLE) in compilation_unit worklib.\$unit_0x0a2a6b1c :compilation_unit (VST)
+	File: ram_sb.sv, line 114, position 38
+	Scope: $unit_0x0a2a6b1c::ram_sb::check
+	Decompile: unable to decompile type 775
+	Source  :                         rm_data.display("SB: data sent to DUT is");
+	Position:                                       ^
+Verilog Syntax Tree: named connection expression (VST_E_NAMED_CONNECTION) in compilation_unit worklib.\$unit_0x0a2a6b1c :compilation_unit (VST)
+	File: ram_sb.sv, line 114, position 64
+	Decompile: named connection
+	Source  :                         rm_data.display("SB: data sent to DUT is");
+	Position:                                                                 ^
+Verilog Syntax Tree: string expression (VST_E_STRING) in compilation_unit worklib.\$unit_0x0a2a6b1c :compilation_unit (VST)
+	File: ram_sb.sv, line 114, position 64
+	Decompile: "SB: data sent to DUT is"
+	Source  :                         rm_data.display("SB: data sent to DUT is");
+	Position:                                                                 ^
+Verilog Syntax Tree: blocking assignment statement (VST_S_BLOCKING_ASSIGNMENT) in compilation_unit worklib.\$unit_0x0a2a6b1c :compilation_unit (VST)
+	File: ram_env.sv, line 39, position 13
+	Scope: $unit_0x0a2a6b1c::ram_env::build
+	Decompile: new ()
+	Source  :         rd_h = new(wrmon2rm,rdmon2rm,rm2sb);
+	Position:              ^
+Intermediate File: root (IF_ROOT) in compilation_unit worklib.\$unit_0x0a2a6b1c :compilation_unit (VST)
+Verilog Syntax Tree: new expression (VST_E_NEW) in compilation_unit worklib.\$unit_0x0a2a6b1c :compilation_unit (VST)
+	File: ram_env.sv, line 39, position 17
+	Scope: $unit_0x0a2a6b1c::ram_env::build
+	Decompile: new ()
+	Source  :         rd_h = new(wrmon2rm,rdmon2rm,rm2sb);
+	Position:                  ^
+Verilog Syntax Tree: number expression (VST_E_NUMBER) in compilation_unit worklib.\$unit_0x0a2a6b1c :compilation_unit (VST)
+	File: ram_env.sv, line 58, position 37
+	Decompile: 1
+	Source  :                 for(int i=0;i<4096;i++)
+	Position:                                      ^
+Verilog Syntax Tree: root (VST_ROOT) in compilation_unit worklib.\$unit_0x0a2a6b1c :compilation_unit (VST)
+	File: ram_trans.sv, line 1, position 8
+	Decompile: $unit_0x0a2a6b1c
+	Source  : class ram_trans;
+	Position:         ^
+Intermediate File: root (IF_ROOT)
+csi-ncvlog - CSI: investigation complete took 0.066 secs, send this file to Cadence Support

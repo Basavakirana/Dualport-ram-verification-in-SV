@@ -1,0 +1,90 @@
+irun(64): 15.20-s051: (c) Copyright 1995-2018 Cadence Design Systems, Inc.
+TOOL:	irun(64)	15.20-s051: Started on Mar 08, 2019 at 03:28:43 IST
+irun
+	-access +rwc
+	dualport_ram.v
+	ram_if.sv
+	ram_trans.sv
+	ram_gen.sv
+	ram_write_drv.sv
+	ram_read_drv.sv
+	ram_write_mon.sv
+	ram_read_mon.sv
+	ram_rm.sv
+	ram_sb.sv
+	ram_env.sv
+	ram_test.sv
+	top.sv
+file: top.sv
+	module worklib.top:sv
+		errors: 0, warnings: 0
+		Caching library 'worklib' ....... Done
+	Elaborating the design hierarchy:
+    dualport_ram DUT (.clk(clock),
+                   |
+ncelab: *W,CUVWSP (./top.sv,13|19): 1 output port was not connected:
+ncelab: (./dualport_ram.v,1): data_out
+
+	Top level design units:
+		$unit_0x1db80366
+		top
+ncelab: *W,DSEMEL: This SystemVerilog design will be simulated as per IEEE 1800-2009 SystemVerilog simulation semantics. Use -disable_sem2009 option for turning off SV 2009 simulation semantics.
+	Building instance overlay tables: ..........
+    constraint valid_data {data_in inside {[1:4000]};}
+                                                 |
+ncelab: *W,VALFIT (./ram_trans.sv,17|49): Value will not fit in the random variable.
+.......... Done
+	Generating native compiled code:
+		worklib.\$unit_0x1db80366 :compilation_unit <0x03f56c80>
+			streams:  12, words: 22067
+		worklib.\$unit_0x1db80366 :compilation_unit <0x16013ecb>
+			streams:  10, words: 10409
+		worklib.\$unit_0x1db80366 :compilation_unit <0x1e030e3f>
+			streams:   9, words: 12077
+		worklib.\$unit_0x1db80366 :compilation_unit <0x269234c8>
+			streams:  13, words: 18385
+		worklib.\$unit_0x1db80366 :compilation_unit <0x27bc25e4>
+			streams:   0, words:     0
+		worklib.\$unit_0x1db80366 :compilation_unit <0x42d47d7e>
+			streams:  10, words: 10518
+		worklib.\$unit_0x1db80366 :compilation_unit <0x463f9390>
+			streams:   9, words:  6187
+		worklib.\$unit_0x1db80366 :compilation_unit <0x5a54dce8>
+			streams:  10, words: 16567
+		worklib.\$unit_0x1db80366 :compilation_unit <0x5d97a85d>
+			streams:   9, words: 10067
+		worklib.\$unit_0x1db80366 :compilation_unit <0x5f14d4e5>
+			streams:  15, words: 18088
+		worklib.\$unit_0x1db80366 :compilation_unit <0x723c2b37>
+			streams:  10, words: 14049
+		worklib.ram_if:sv <0x29b6a0f8>
+			streams:  22, words: 13001
+		worklib.top:sv <0x2d16c4ba>
+			streams:   8, words:  1768
+	Building instance specific data structures.
+	Loading native compiled code:     .................... Done
+	Design hierarchy summary:
+		                    Instances  Unique
+		Modules:                    2       2
+		Interfaces:                 1       1
+		Registers:                 93     157
+		Scalar wires:               4       -
+		Vectored wires:             3       -
+		Named events:               0       1
+		Always blocks:              1       1
+		Initial blocks:             2       2
+		Clocking blocks:            4       4
+		Clocking items:            11      11
+		Parallel blocks:            8       8
+		Pseudo assignments:         6       6
+		Assertions:                 1       1
+		Covergroup Instances:       0       1
+		Compilation units:          1       1
+		SV Class declarations:     10      10
+		SV Class specializations:  10      10
+	Writing initial simulation snapshot: worklib.top:sv
+Loading snapshot worklib.top:sv .................... Done
+SVSEED default: 1
+ncsim: *W,DSEM2009: This SystemVerilog design is simulated as per IEEE 1800-2009 SystemVerilog simulation semantics. Use -disable_sem2009 option for turning off SV 2009 simulation semantics.
+ncsim> source /tools/cadence/INCISIVE152/tools/inca/files/ncsimrc
+ncsim> run

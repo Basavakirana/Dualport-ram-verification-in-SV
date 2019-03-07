@@ -1,0 +1,29 @@
+//
+// File created by:  irun
+// Do not modify this file
+//
+-XLMODE
+./INCA_libs/irun.lnx8664.15.20.nc
+-RUNMODE
+dualport_ram.v
+ram_if.sv
+ram_trans.sv
+ram_gen.sv
+ram_write_drv.sv
+ram_read_drv.sv
+ram_write_mon.sv
+ram_read_mon.sv
+ram_rm.sv
+ram_sb.sv
+ram_env.sv
+ram_test.sv
+top.sv
+-CDSLIB
+./INCA_libs/irun.lnx8664.15.20.nc/cdsrun.lib
+-HDLVAR
+./INCA_libs/irun.lnx8664.15.20.nc/hdlrun.var
+-MESSAGES
+-UPDATE
+-XLLIBSTORE
+./INCA_libs/irun.lnx8664.15.20.nc/xllibs
+-ALLOWUNBOUND
